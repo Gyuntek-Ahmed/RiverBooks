@@ -17,7 +17,7 @@ internal class Book
         Price = Guard.Against.Negative(price);
     }
 
-    internal void Update(decimal newPrice)
+    internal void UpdatePrice(decimal newPrice)
     {
         Price = Guard.Against.Negative(newPrice);
     }
