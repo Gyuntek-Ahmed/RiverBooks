@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using System.Reflection;
 
-namespace RiverBooks.Books;
+namespace RiverBooks.Books.Data;
 
 public class BookDbContext : DbContext
 {

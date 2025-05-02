@@ -4,3 +4,34 @@ GET {{RiverBooks.Web_HostAddress}}/books/
 Accept: application/json
 
 ###
+
+@BookID = 237cea4e-334c-4841-9a5c-776487084423
+GET {{RiverBooks.Web_HostAddress}}/books/{{BookID}}
+Accept: application/json
+
+###
+
+POST {{RiverBooks.Web_HostAddress}}/books
+Accept: application/json
+Content-Type: application/json
+{
+  "id": "237cea4e-334c-4841-9a5c-776487084423",
+  "title": "Modular Monoliths - Getting Started",
+  "author": "Gyuntek Ahmed",
+  "price": 35.99
+}
+
+###
+
+DELETE {{RiverBooks.Web_HostAddress}}/books/237cea4e-334c-4841-9a5c-776487084423
+Accept: application/json
+
+###
+
+POST {{RiverBooks.Web_HostAddress}}/books/237cea4e-334c-4841-9a5c-776487084423/pricehistory
+Accept: application/json
+Content-Type: application/json
+{
+  "id": "237cea4e-334c-4841-9a5c-776487084423",
+  "newPrice": 25.99
+}

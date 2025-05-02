@@ -3,17 +3,19 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using RiverBooks.Books.Data;
 
 #nullable disable
 
 namespace RiverBooks.Books.Data.Migrations
 {
     [DbContext(typeof(BookDbContext))]
-    partial class BookDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250502070754_Second")]
+    partial class Second
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -50,24 +52,31 @@ namespace RiverBooks.Books.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("ac76deab-e2c4-4726-a244-3288ae9f4244"),
+                            Id = new Guid("6d15efde-a7e0-4a51-a942-c7b431a390d1"),
                             Author = "J.R.R. Tolkien",
                             Price = 10.99m,
                             Title = "The Hobbit"
                         },
                         new
                         {
-                            Id = new Guid("ddbde630-efcc-4a88-a9a1-6000355c13bc"),
+                            Id = new Guid("d736edba-562d-4857-8215-a5db699a0180"),
                             Author = "J.R.R. Tolkien",
                             Price = 29.99m,
                             Title = "The Lord of the Rings"
                         },
                         new
                         {
-                            Id = new Guid("5f7827d3-ddb9-42fe-9670-42c971f49a37"),
+                            Id = new Guid("666c8c03-7891-43e4-8da7-d803569e7aba"),
                             Author = "J.R.R. Tolkien",
                             Price = 19.99m,
                             Title = "The Silmarillion"
+                        },
+                        new
+                        {
+                            Id = new Guid("137cea4e-334c-4841-9a5c-776487084423"),
+                            Author = "J.R.R. Tolkien",
+                            Price = 14.99m,
+                            Title = "The Children of Húrin"
                         });
                 });
 #pragma warning restore 612, 618
