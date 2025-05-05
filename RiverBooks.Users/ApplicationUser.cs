@@ -1,9 +1,9 @@
-﻿using Microsoft.AspNet.Identity.EntityFramework;
+﻿using Microsoft.AspNetCore.Identity;
 
 namespace RiverBooks.Users
 {
     public class ApplicationUser : IdentityUser
     {
-        // Add any additional properties you need for your user
+        public string FullName { get; set; } = string.Empty;
     }
 }
