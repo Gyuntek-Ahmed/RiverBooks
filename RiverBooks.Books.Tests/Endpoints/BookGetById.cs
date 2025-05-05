@@ -10,6 +10,8 @@ namespace RiverBooks.Books.Tests.Endpoints
     {
         [Theory]
         [InlineData("ca4ae756-5f8e-43e6-9a19-00cd9b1ecf41", "The Lord of the Rings")]
+        [InlineData("54f8ec8c-0a5c-4cbd-bb0d-0e7dc86279bd", "The Silmarillion")]
+        [InlineData("21def808-7199-4d5f-9707-b3d3a76d5d85", "The Hobbit")]
         public async Task ReturnsExpectedBookGivenIdAsync(string validId, string expectedTitle)
         {
             Guid id = Guid.Parse(validId);

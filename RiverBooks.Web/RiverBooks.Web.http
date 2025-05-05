@@ -31,7 +31,7 @@ Accept: application/json
 POST {{RiverBooks.Web_HostAddress}}/books/237cea4e-334c-4841-9a5c-776487084423/pricehistory
 Accept: application/json
 Content-Type: application/json
+
 {
-  "id": "237cea4e-334c-4841-9a5c-776487084423",
-  "newPrice": 25.99
+  "newPrice": -25.99
 }
