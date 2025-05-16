@@ -27,7 +27,6 @@ namespace RiverBooks.Books.Data
         public async Task<Book?> GetByIdAsync(Guid id)
         {
             return await _dbContext.Books.FindAsync(id);
-
         }
 
         public async Task<List<Book>> ListAsync()

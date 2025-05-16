@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
-namespace RiverBooks.Users
+namespace RiverBooks.Users.Data
 {
     public class UsersDbContext : IdentityDbContext
     {

@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
+using RiverBooks.Users.Data;
 
 namespace RiverBooks.Users
 {

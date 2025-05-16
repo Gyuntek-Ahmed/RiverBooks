@@ -11,7 +11,7 @@ namespace RiverBooks.Users
 
         public IReadOnlyCollection<CartItems> CartItems => _cartItems.AsReadOnly();
 
-        public void AddCartItem(CartItems cartItem)
+        public void AddItemToCart(CartItems cartItem)
         {
             Guard.Against.Null(cartItem);
 
@@ -20,7 +20,8 @@ namespace RiverBooks.Users
             if (existingItem != null)
             {
                 existingItem.UpdateQuantity(existingItem.Quantity + cartItem.Quantity);
-                // TODO: Update the unit price if needed
+                existingItem.UpdateDescription(cartItem.Description);
+                existingItem.UpdateUnitPrice(cartItem.UnitPrice);
                 return;
             }
             _cartItems.Add(cartItem);
@@ -37,7 +38,12 @@ namespace RiverBooks.Users
             UnitPrice = Guard.Against.Negative(unitPrice);
         }
 
-        public Guid Id { get; private set; }
+        public CartItems()
+        {
+            // For EF Core
+        }
+
+        public Guid Id { get; private set; } = Guid.NewGuid();
 
         public Guid BookId { get; private set; }
 
@@ -50,6 +56,16 @@ namespace RiverBooks.Users
         internal void UpdateQuantity(int quantity)
         {
             Quantity = Guard.Against.Negative(quantity);
+        }
+
+        internal void UpdateDescription(string description)
+        {
+            Description = Guard.Against.NullOrEmpty(description);
+        }
+
+        internal void UpdateUnitPrice(decimal unitPrice)
+        {
+            UnitPrice = Guard.Against.Negative(unitPrice);
         }
     }
 }
