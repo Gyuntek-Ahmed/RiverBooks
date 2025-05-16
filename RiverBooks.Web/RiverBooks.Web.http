@@ -58,4 +58,26 @@ Content-Type: application/json
   "password":"Pass@word1"
 }
 
+###
+
 @token=eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDY0NTEyNzYsImlhdCI6MTc0NjQ0NzY3NiwiRW1haWxBZGRyZXNzIjoiZ3l1bmlAbWFpbC5iZyIsIm5iZiI6MTc0NjQ0NzY3N30.GteBDelZqGmxIAwvvl1Mi8yPgTFea54DnmXTN7wP1v4
+
+# Add item to cart
+Post {{RiverBooks.Web_HostAddress}}/cart
+Accept: text/plain
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "bookId": "237cea4e-334c-4841-9a5c-776487084423",
+  "quantity": 1
+}
+
+###
+
+# List cart items
+GET {{RiverBooks.Web_HostAddress}}/cart
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
