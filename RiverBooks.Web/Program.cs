@@ -31,7 +31,7 @@ builder.Services.AddEndpointsApiExplorer();
 
 // Add Module Services
 List<Assembly> mediatRAssemblies = [typeof(Program).Assembly];
-builder.Services.AddBookServices(builder.Configuration, loger, mediatRAssemblies);
+builder.Services.AddBookModuleServices(builder.Configuration, loger, mediatRAssemblies);
 builder.Services.AddUsersModuleServices(builder.Configuration, loger, mediatRAssemblies);
 
 // Set up MediatR
