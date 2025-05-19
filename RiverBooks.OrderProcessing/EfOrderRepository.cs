@@ -14,7 +14,7 @@ namespace RiverBooks.OrderProcessing
 
         public async Task AddAsync(Order order) => await _dbContext.Orders.AddAsync(order);
         
-        public Task<List<Order>> ListAsync() => _dbContext.Orders.ToListAsync();
+        public Task<List<Order>> ListAsync() => _dbContext.Orders.Include(o => o.OrderItems).ToListAsync();
 
         public Task SaveChangesAsync() => _dbContext.SaveChangesAsync();
     }

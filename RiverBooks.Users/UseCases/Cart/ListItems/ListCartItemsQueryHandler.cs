@@ -2,10 +2,8 @@
 using MediatR;
 using RiverBooks.Users.CartEndpoints;
 
-namespace RiverBooks.Users.UseCases
+namespace RiverBooks.Users.UseCases.Cart.ListItems
 {
-    public record ListCartItemsQuery(string EmailAddress) : IRequest<Result<List<CartItemDto>>>;
-
     internal class ListCartItemsQueryHandler : IRequestHandler<ListCartItemsQuery, Result<List<CartItemDto>>>
     {
         private readonly IApplicationUserRepository _userRepository;

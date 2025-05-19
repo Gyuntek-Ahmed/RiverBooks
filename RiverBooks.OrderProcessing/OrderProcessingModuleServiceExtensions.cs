@@ -11,7 +11,7 @@ namespace RiverBooks.OrderProcessing
     /// </summary>
     public static class OrderProcessingModuleServiceExtensions
     {
-        public static IServiceCollection AddUsersModuleServices(this IServiceCollection services, ConfigurationManager config, ILogger logger, List<System.Reflection.Assembly> mediatRAssemblies)
+        public static IServiceCollection AddOrderProcessingModuleServices(this IServiceCollection services, ConfigurationManager config, ILogger logger, List<System.Reflection.Assembly> mediatRAssemblies)
         {
             string? connectionString = config.GetConnectionString("OrderProcessingConnectionString");
             services.AddDbContext<OrderProcessingDbContext>(config =>
