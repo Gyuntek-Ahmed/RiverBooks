@@ -60,7 +60,7 @@ Content-Type: application/json
 
 ###
 
-@token=eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDc2NTU0ODQsImlhdCI6MTc0NzY1MTg4NCwiRW1haWxBZGRyZXNzIjoiZ3l1bmlAbWFpbC5iZyIsIm5iZiI6MTc0NzY1MTg4NH0.Sr1AnnCPZ6Q1O6uhiYvtEpQur9Aka8UtJA9JBP4FB7M
+@token=eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDc2NjI1NzksImlhdCI6MTc0NzY1ODk3OSwiRW1haWxBZGRyZXNzIjoiZ3l1bmlAbWFpbC5iZyIsIm5iZiI6MTc0NzY1ODk3OX0.fOTQVrk7FlVwCq1xiUHbh5g_nRLN4VYiVdZBOFSUHPM
 
 # Add item to cart
 Post {{RiverBooks.Web_HostAddress}}/cart
@@ -96,6 +96,33 @@ Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
-  "shippingAddressId":"4BE7524C-D2A6-4807-ADE7-04D10F217FB9",
-  "billingAddressId":"4BE3562C-D2A6-4807-ADE7-04D10F217FB1"
+  "shippingAddressId":"db724468-9fdc-4c3f-b65f-4f2f7eb6a673",
+  "billingAddressId":"db724468-9fdc-4c3f-b65f-4f2f7eb6a673"
 }
+
+###
+
+# List Addresses
+
+GET {{RiverBooks.Web_HostAddress}}/users/addresses
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+# Add Address to User
+
+Post {{RiverBooks.Web_HostAddress}}/users/addresses
+Accept: application/json
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "street1":"N. Vapcarov 53",
+  "street2":"Floor 8",
+  "city":"Silistra",
+  "state":"Silistra",
+  "postalcode":"7500",
+  "country":"Bulgaria"
+}
+###

@@ -11,6 +11,10 @@ namespace RiverBooks.Users
 
         public IReadOnlyCollection<CartItems> CartItems => _cartItems.AsReadOnly();
 
+        private readonly List<UserStreetAddress> _address = new();
+
+        public IReadOnlyCollection<UserStreetAddress> Address => _address.AsReadOnly();
+
         public void AddItemToCart(CartItems cartItem)
         {
             Guard.Against.Null(cartItem);
@@ -30,6 +34,21 @@ namespace RiverBooks.Users
         public void ClearCart()
         {
             _cartItems.Clear();
+        }
+
+        public UserStreetAddress AddAddress(Address address)
+        {
+            Guard.Against.Null(address);
+
+            var existingAddress = _address.SingleOrDefault(a => a.StreetAddress == address);
+
+            if (existingAddress != null)
+                return existingAddress;
+
+            var newAddress = new UserStreetAddress(Id, address);
+            _address.Add(newAddress);
+
+            return newAddress;
         }
     }
 }
