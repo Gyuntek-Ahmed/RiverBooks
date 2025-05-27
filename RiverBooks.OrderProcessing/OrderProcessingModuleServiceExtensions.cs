@@ -16,8 +16,9 @@ namespace RiverBooks.OrderProcessing
             string? connectionString = config.GetConnectionString("OrderProcessingConnectionString");
             services.AddDbContext<OrderProcessingDbContext>(config =>
                 config.UseSqlServer(connectionString));
-
+            // Add services
             services.AddScoped<IOrderRepository, EfOrderRepository>();
+            services.AddScoped<IOrderAddressCache, RedisOrderAddressCache>();
 
             mediatRAssemblies.Add(typeof(OrderProcessingModuleServiceExtensions).Assembly);
 
