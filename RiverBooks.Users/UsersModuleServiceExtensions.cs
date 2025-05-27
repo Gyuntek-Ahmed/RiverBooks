@@ -16,8 +16,11 @@ namespace RiverBooks.Users
 
             services.AddIdentityCore<ApplicationUser>()
             .AddEntityFrameworkStores<UsersDbContext>();
-
+            // Add User Services
             services.AddScoped<IApplicationUserRepository, EfApplicationUserRepository>();
+
+            // Add MediatR Domain Event Dispatcher
+            services.AddScoped<IDomainEventDispatcher, MediatRDomainEventDispatcher>();
 
             mediatRAssemblies.Add(typeof(UsersModuleServiceExtensions).Assembly);
 

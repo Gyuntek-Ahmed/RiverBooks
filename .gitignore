@@ -363,4 +363,6 @@ MigrationBackup/
 FodyWeavers.xsd
 
 RiverBooks.Web/appsettings.json
+RiverBooks.Web/appsettings.Development.json
 RiverBooks.Web/appsettingsTesting.json
+RiverBooks.Web/appsettingsTesting.Development.json

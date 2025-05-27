@@ -60,7 +60,7 @@ Content-Type: application/json
 
 ###
 
-@token=eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDgzMzY1NzAsImlhdCI6MTc0ODMzMjk3MCwiRW1haWxBZGRyZXNzIjoiZ3l1bmlAbWFpbC5iZyIsIm5iZiI6MTc0ODMzMjk3MH0.DFqJNagOlt0f6DcNBKJ_UNS1LirCGmGFX5wpAJmiGCY
+@token=eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDgzNDEyMzIsImlhdCI6MTc0ODMzNzYzMiwiRW1haWxBZGRyZXNzIjoiZ3l1bmlAbWFpbC5iZyIsIm5iZiI6MTc0ODMzNzYzMn0.SCbVc3Ovg_Vs4liqZPC34jn8cYodGxdxhl7-hzSkvlU
 
 # Add item to cart
 Post {{RiverBooks.Web_HostAddress}}/cart
@@ -119,7 +119,7 @@ Content-Type: application/json
 
 {
   "street1":"N. Vapcarov 53",
-  "street2":"Floor 8",
+  "street2":"Floor 8, Number 48",
   "city":"Silistra",
   "state":"Silistra",
   "postalcode":"7500",
